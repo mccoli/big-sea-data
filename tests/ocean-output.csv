@@ -1,0 +1,2 @@
+locationName,children,description,hasDeviceData,locationCode,hasPropertyData
+Barkley Canyon Axis,"[{'locationName': 'Camera Left Light', 'children': None, 'description': '', 'hasDeviceData': 'true', 'locationCode': 'BALL', 'hasPropertyData': 'false'}, {'locationName': 'Camera Right Light', 'children': None, 'description': '', 'hasDeviceData': 'true', 'locationCode': 'BARL', 'hasPropertyData': 'false'}]"," Barkley Canyon Axis is located within Barkley Canyon, where benthic processes, biodiversity, sediment dynamics are observed.",true,BACAX,true

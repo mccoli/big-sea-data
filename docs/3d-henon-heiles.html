@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Olivia McCallum">
+    <title>big-sea-data</title>
+</head>
+<body style="color:blue; font-family: 'Lucida Sans', sans-serif;">
+
+    <a href="../index.html">home</a>
+    <a href="documentation.html">documentation</a>
+    
+    <h1>the hénon-heiles system</h1>
+    <h4>Hénon & Heiles + Strange Attractors</h4>
+    <p>The Hénon-Heiles system was devised to define the non-linear motion of a star in galactic dynamics. The orbits are described as chaotic in the modern day. The system (HHS) is defined by four equations which I attempted to plot using Python. I chose this equation after learning about Strange Attractors. An attractor is defined as a system which has a wide variety of starting conditions, but which has states that said system tends to evolve towards. What makes an attractor Strange is when its dynamics are chaotic, changing wildly due to a sensitivity to its starting conditions, after any number of iterations. This dynamic system can be described as "locally unstable yet globally stable" (Gregbogi, Ott and Yorke, 1987).</p>
+
+    <p>I became interested in strange attractors due to their visual renderings - reminding me of deep sea creatures with their alien physiologies. There is a connection between the two subjects in that they both invoke mystery amongst the scholars in their respective fields.</p>
+
+    <h4>visual references</h4>
+    <embed type="video/webm" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Rotating_3D_Attractor.webm" width="400" height="300">
+        <p>Description from the artist/programmer: The attractor shown here is known as the Poisson Saturne attractor. It is a set in three-dimensional space and this video aims to give the viewer a fuller understanding of the set than what can be gained from one 2D image. The set consists of two separate parts; one is here colored in yellow/green and one in blue/magenta. 22 April 2021. by Bvsydow. (licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">the Creative Commons Attribution-Share Alike 4.0 International license</a>.)</p>
+    <img src="../img/research/bloody-belly-comb-jelly.png" style="width: 400px">
+    <img src="../img/research/sea-angel.png" style="width: 400px">
+    <p>images from the Monterey Bay Aquarium, CA</p>
+    <h4>insert own sketches here</h4>
+
+    <h4>code outputs</h4>
+    <p>I found a Python code by John Burkardt (distributed under the GNU LGPL license) that sets up the Hénon-Heiles ordinary differential equations (ODE) for the motion of a star moving around a galactic centre. The source code and original output images can be accessed <a href="https://people.sc.fsu.edu/~jburkardt/py_src/henon_heiles_ode/henon_heiles_ode.html">here</a>.</p>
+   
+    <div class="column">
+        <div class="row">
+            <h5>plotting in 2D...</h5>
+            <img src="../img/tests/euler.png" style="width: 400px">
+            <img src="../img/tests/orbit.png" style="width: 400px">
+            <p>I started with running the ODE program I had found with some minor adjustments so it would only output the plots I was interested in. Doing so helped me figure out the nature of the visuals I could extract from the equations. I want my final outcome to be animated, and so decided the euler Orbit plot could be useful within my own code.</p>
+        </div>
+        <div class="row">
+            <h5>plotting in 3D...</h5>
+            <img src="../img/tests/3d-line.png" style="width: 400px">
+            <img src="../img/tests/surface-triangulation.png" style="width: 400px">
+            <p>To familiarise myself with three-dimensional plotting in Python, I followed a quick <a href="https://www.geeksforgeeks.org/three-dimensional-plotting-in-python-using-matplotlib/">Geeks For Geeks tutorial</a> on the types of plots I liked and could imagine the HHS mapped onto.</p>
+        </div>
+        <div class="row">
+            <h5>combining with the HHS...</h5>
+            <img src="../img/tests/3d-hh-line.png" style="width: 400px">
+            <img src="../img/tests/3d-hh-line0.png" style="width: 400px">
+            <img src="../img/tests/3d-hh-line1.png" style="width: 400px">  
+            <p>I used the techniques I had learnt from the ODE program and the Geeks For Geeks tutorial to create my own code which combined the two skillsets. I took the results of the equations and used them as points to plot on the graph. You can see in order the iterations it took to map the points onto three planes.</p>        
+        </div>
+        <div class="row">
+            <h5>creating a 3D shape...</h5>
+            <p>Lastly I modified the code to push the results of the equations through a function that would create an orbital shape.</p>
+            <img src="../img/tests/3d-hh-orbit.png" style="width: 400px">
+            <img src="../img/tests/3d-hh-orbit0.png" style="width: 400px">
+            <img src="../img/tests/3d-hh-orbit1.png" style="width: 400px">
+            <img src="../img/tests/3d-hh-orbit2.png" style="width: 400px">
+            <p>In this last plot, I attempted to combine the orbital equation with the a surface-triangulation plot, but it ended up flattening back onto two dimensions.</p>
+            <p>The code looked like this: </p>
+            <img src="../img/tests/hhs0.png" style="width: 400px">
+            <img src="../img/tests/hhs1.png" style="width: 400px">
+            <img src="../img/tests/hhs2.png" style="width: 400px">
+            <p>After all the plotting I figured a way to animate everything would be to send the final values across to a JavaScript sketch. I managed to do this successfully but moved onto other tests. I didn't move forward with this system because ultimately I felt I didn't have a solid understanding of the mathematics behind it, at least not enough to stake my entire project on it. Further more the code was becoming more and more convoluted. I'm sure there were many opportunities for abstraction and optimisation that I was missing, so decided it wasn't worth it, especially for a visual output I wasn't pleased with.</p>
+        </div>
+    </div>
+    
+    <h4>sources</h4>
+    <ul>
+        <li>Henon, M. and Heiles, C. (1964). The applicability of the third integral of motion: Some numerical experiments. The Astronomical Journal, 69, p.73.<a href="https://doi.org/10.1086/109234">doi:https://doi.org/10.1086/109234.</a></li>
+        <li>Grebogi, C., Ott, E. and Yorke, J.A. (1987). Chaos, Strange Attractors, and Fractal Basin Boundaries in Nonlinear Dynamics. Science, 238(4827), pp.632–638. doi:<a href="https://doi.org/10.1126/science.238.4827.632">https://doi.org/10.1126/science.238.4827.632</a></li>
+        <li>Teague, C. (2022). 6 Otherworldly Deep-Sea Creatures Spotted By CA Scientists. [online] Available at: <a href="https://patch.com/california/san-diego/s/i20ll/6-otherworldly-deep-sea-creatures-spotted-ca-scientists">https://patch.com/california/san-diego/s/i20ll/6-otherworldly-deep-sea-creatures-spotted-ca-scientists</a> [Accessed 28 May 2023]. ‌</li>
+    </ul>
+    
+</body>
+</html>

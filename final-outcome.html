@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Olivia McCallum">
+        <script src="addons/p5.min.js"></script>
+        <script src="addons/incorporated.js"></script>
+        <script src="addons/jquery-3.6.3.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
+        <title>final</title>
+
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .background {
+                position: relative;
+            }
+
+            .text-overlay {
+                font-size: 30px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                color: seashell;
+                padding: 20px;
+                z-index: 9999;
+                height: 100%;
+            }
+
+            div {
+                height: 100%;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body style="font-family: 'Cutive Mono', monospace;">
+
+        <div class="background" id="container"></div>
+
+        <div class="text-overlay">
+
+            <div class="random-position">
+                <!-- some real deep sea creatures -->
+                <p>Bathynomus giganteus</p>
+                <p>Chimaera monstrosa</p>
+                <p>Eurythenes gryllus</p>
+                <p>Bathysaurus ferox</p>
+                <p>Bathypolypus arcticus</p>
+                <p>Siphonophora sibogae</p>
+                <p>Pseudoliparis amblystomopsis</p>
+                <p>Xenophyophorea</p>
+                <p>Calyptopsis effusa</p>
+                <p>Abyssocottus korotneffi</p>
+                <p>Deepstaria enigmatica</p>
+                <p>Atolla wyville</p>
+                <p>Periphylla periphylla</p>
+                <p>Crossota millsae</p>
+                <p>Halitrephes maasi</p>
+                <p>Bathykorus bouilloni</p>
+            </div>
+        </div>
+
+        <p>Olivia McCallum, "deep sea crawler", 2023</p>
+
+        <script>
+            $(window).on('load', function() {
+                // get window dimensions
+                var windowHeight = $(window).height();
+                var windowWidth = $(window).width();
+                
+                // choosing a random position for each p element
+                $(".random-position p").each(function (index) {
+                    console.log('randomizing...');
+
+                    // get each elements dimensions
+                    var elementHeight = $(this).outerHeight();
+                    var elementWidth = $(this).outerWidth();
+
+                    var collided = true; // flag to check collision
+
+                    // keep generating random positions until there is no collision
+                    while (collided) {
+                        // Generate a random position
+                        var randomTop = Math.floor(Math.random() * (windowHeight - elementHeight));
+                        var randomLeft = Math.floor(Math.random() * (windowWidth - elementWidth));
+
+                        collided = false; // reset the collision flag
+
+                        $(".random-position p").each(function() {
+                            if ($(this).is($(this))) {
+                                return; // skip checking collision with self
+                            }
+
+                            // get the position and dimensions of the other element
+                            var otherTop = $(this).offset().top;
+                            var otherLeft = $(this).offset().left;
+                            var otherHeight = $(this).outerHeight();
+                            var otherWidth = $(this).outerWidth();
+
+                            // check for overlap
+                            if (
+                                randomTop < otherTop + otherHeight &&
+                                randomTop + elementHeight > otherTop &&
+                                randomLeft < otherLeft + otherWidth &&
+                                randomLeft + elementWidth > otherLeft
+                            ) {
+                                collided = true; // if collision detected
+                                return false; // stop checking further elements
+                            }
+                        });
+                    }
+
+                    // apply final positions
+                    $(this).css({
+                        position: "fixed",
+                        top: randomTop + "px",
+                        left: randomLeft + "px",
+                        opacity: 0
+                    });
+
+                    // animating the opacity to fade in/out each element
+                    $(this).delay(index * 2000).animate({
+                        opacity: 1
+                    }, 2000).delay(2000).animate({
+                        opacity: 0
+                    }, 2000);
+                });
+            });
+        </script>
+    </body>
+</html>

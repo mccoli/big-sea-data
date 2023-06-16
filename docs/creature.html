@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Olivia McCallum">
+        <script src="../addons/p5.min.js"></script>
+        <script src="../addons/creature.js"></script>
+        <title>creature</title>
+    </head>
+    <body style="color:blue; font-family: 'Lucida Sans', sans-serif;">
+        
+        <a href="../index.html">home</a>
+        <a href="documentation.html">documentation</a>
+
+        <h1>butterfly polar curve</h1>
+        <p>The butterfly curve is given by a polar equation, which traces out the figure-eight shape of the wings of a butterfly. It creates a continuous closed curve that is symmetric about the origin, and each loop crosses through the origin. I was able to find a program from Kantel-Chaos-Team which translated this equation into Python code. Then I ported that code into JavaScript, and altered the values until I landed on this jellyfish or coral-like creature. The hardest part was turning the Python code into JavaScript when I didn't fully understand the mathematics that was causing the curve to be drawn. But once it was rendered, I was able to make it 3-dimensional by adding WEBGL capabilities, an arbitrary z value I wrote, and rotating the shape.</p>
+
+        <div id="creature-container"></div>
+        <img src="../img/tests/creature-js.png" style="width: 650px; height: 600px">
+
+        <h4>sources</h4>
+        <li>Barile, M. Weisstein, E.W. (n.d.). Butterfly Curve. [online] From MathWorld--A Wolfram Web Resource. Available at: <a href="https://mathworld.wolfram.com/ButterflyCurve.html">https://mathworld.wolfram.com/ButterflyCurve.html</a>.</li>
+        <li>Kantel-Chaos-Team. (n.d.). Butterfly Curve - Processing.py lernen. [online] Available at: <a href="http://py.kantel-chaos-team.de.s3-website-us-east-1.amazonaws.com/butterfly/">http://py.kantel-chaos-team.de.s3-website-us-east-1.amazonaws.com/butterfly/</a> [Accessed 15 Jun. 2023]</li>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Olivia McCallum">
+        <script src="../addons/p5.min.js"></script>
+        <script src="../addons/habitat.js"></script>
+        <!-- <script src="../addons/tinkerbell.js"></script> -->
+        <!-- <script src="../addons/creature.js"></script>
+        <script src="../addons/lorenz.js"></script> -->
+        <!-- <script src="../addons/simple.js"></script> -->
+        <title>visualisers</title>
+    </head>
+    <body style="color:blue; font-family: 'Lucida Sans', sans-serif;">
+        
+        <a href="../index.html">home</a>
+        <a href="documentation.html">documentation</a>
+
+        <h1>habitat</h1>
+        <p>This is the result of combining my previous sketches onto a single canvas. I'm trying to create a sort of "habitat" for the different "creatures" to live in. Since all of the equations are within the same scope, I had to change variable names slightly (adding a 0 or 1 to the end) and even allow some variables to be shared by each creature. This way of coding was messy but led me to think about distributed agency in real life ecology. It's cool for the "creatures" to be interconnected because I also want my work to be a simulacrum of life. But mostly my aim was to see if it was even possible to render this many moving parts on a single canvas. Although it does work, everything slows down quite quickly because calculating and drawing each vertex at 60FPS takes a lot of processing power. I could either separate the sketches onto different canvases and display them in a way that looks like they are within the same one, or turn each "creature" into a Class or Object so they are self contained. I could call update or display methods sporadically and even have multiple instances of each.</p>
+        <p>Next I need to figure out how to use the underwater location data within the equations so that their movements are informed by real live data.</p>
+
+        <div id="container"></div>
+        
+    </body>
+</html>

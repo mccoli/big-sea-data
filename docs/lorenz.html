@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Olivia McCallum">
+        <script src="../addons/p5.min.js"></script>
+        <script src="../addons/lorenz.js"></script>
+        <title>lorenz</title>
+    </head>
+    <body style="color:blue; font-family: 'Lucida Sans', sans-serif;">
+        
+        <a href="../index.html">home</a>
+        <a href="documentation.html">documentation</a>
+
+        <h1>lorenz</h1>
+        <p>I learnt about this strange attractor from <a href="https://www.youtube.com/watch?v=f0lkz2gSsIk&ab_channel=TheCodingTrain">Daniel Shiffman</a> and based my research and code off of his video. E. N. Lorenz discovered this 3-dimensional differential equation by simplifying a weather model. The behaviour it exhibits is called "deterministic chaos" (www.math.toronto.edu, n.d.). It's one of the earliest discoveries of the butterfly effect because of the hugely differentiating results based on tiny changes in the initial values used. The plotting of the attractor also looks like a butterfly's wings out of coincidence.</p>
+
+        <h4>static version</h4>
+        <img src="../img/tests/lorenz-example.png" style="width: 650px; height: 600px">
+        <img src="../img/tests/bokeh-lorenz.png" style="width: 650px; height: 600px">
+        <p>I started out with this plot from the <a href="https://docs.bokeh.org/en/latest/docs/examples/basic/lines/lorenz.html">bokeh documentation</a> just to familiarise myself with that library. After some research I realised I didn't want to use graphs in my outcome and so followed Daniel Shiffman's tutorial, modified it, and created the animated plot you see below.</p> 
+        
+        <h4>animated version</h4>
+        <div id="lorenz-container"></div>
+        <img src="../img/tests/lorenz-js.png" style="width: 500px; height: 600px">
+        <p>I started out in Processing to be more comfortable and then moved to JavaScript once I felt I knew how the system was working. I was able to borrow the custom Vector object I had created for the Tinker Bell fractal. I like how the line moves because the slight variations give it life. The overall shape is also reminiscent of the bell of a jellyfish.</p>
+
+        <h4>sources</h4>
+        <li>The Coding Train (2016). Coding Challenge #12: The Lorenz Attractor in Processing. [online] Available at: <a href="https://www.youtube.com/watch?v=f0lkz2gSsIk&ab_channel=TheCodingTrain">https://www.youtube.com/watch?v=f0lkz2gSsIk&ab_channel=TheCodingTrain</a> [Accessed 29 May 2023].</li>
+        <li>www.math.toronto.edu. (n.d.). The Lorenz system -- An introduction to chaos. [online] Available at: <a href="https://www.math.toronto.edu/kzhang/teaching/courses/mat332-2022/_8-lorenz-system/">https://www.math.toronto.edu/kzhang/teaching/courses/mat332-2022/_8-lorenz-system/</a> [Accessed 1 Jun. 2023].</li>
+        <li>Weisstein, E.W. (n.d.). Lorenz Attractor. [online] mathworld.wolfram.com. Available at: <a href="https://mathworld.wolfram.com/LorenzAttractor.html">https://mathworld.wolfram.com/LorenzAttractor.html</a> [Accessed 1 Jun. 2023].‌</li>
+    </body>
+</html>
